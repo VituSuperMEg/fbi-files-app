@@ -27,12 +27,14 @@ export default function Index() {
       </Box>
       <Box className="p-5">
         <Button className="bg-secondary-0 h-[60px] rounded-default">
-          <Text
-            className="text-white"
-            style={{ fontFamily: "JetBrainsMono_700Bold" }}
-          >
-            Login
-          </Text>
+          <Link href={"/login"} className="flex items-center justify-center">
+            <Text
+              className="text-white"
+              style={{ fontFamily: "JetBrainsMono_700Bold" }}
+            >
+              Login
+            </Text>
+          </Link>
         </Button>
         <Link href={"/criar-conta"} className="mt-5">
           <Text

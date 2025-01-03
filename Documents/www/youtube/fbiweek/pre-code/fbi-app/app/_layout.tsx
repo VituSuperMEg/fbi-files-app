@@ -9,6 +9,7 @@ import {
 } from "@expo-google-fonts/jetbrains-mono";
 import { useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
+import { AuthContext, AuthProvider } from "@/context/useAuth";
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -28,14 +29,16 @@ export default function RootLayout() {
 
   return (
     <GluestackUIProvider mode="light">
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="criar-conta" />
-        <Stack.Screen name="login" />
-      </Stack>
+      <AuthProvider>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="criar-conta" />
+          <Stack.Screen name="login" />
+        </Stack>
+      </AuthProvider>
     </GluestackUIProvider>
   );
 }
